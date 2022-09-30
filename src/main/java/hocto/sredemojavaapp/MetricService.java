@@ -20,7 +20,6 @@ public class MetricService {
     }
 
     private void initCounter() {
-        this.meterRegistry.counter("simple.counter", "app", "demo", "team", "sre", "status", "UNKNOWN");
         successful = Counter.builder("simple.counter")
             .tag("app", "demo")
             .tag("team", "sre")
