@@ -15,7 +15,10 @@ public class MetricRestController {
 	@GetMapping("/")
 	public String index() {
 		this.metricService.incrementCounter();
-		return "The counter was incremented: " + this.metricService.getCounterValue();
+		return String.format("Successful: %s, Exceptions: %s, Total: %s", 
+			metricService.getCounterValue(), 
+			metricService.getExceptionsValue(), 
+			metricService.getTotalValue());
 	}
 
 }
