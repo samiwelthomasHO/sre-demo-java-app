@@ -3,8 +3,6 @@ package hocto.sredemojavaapp;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 
-import java.util.Random;
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -35,18 +33,15 @@ public class MetricService {
             .register(meterRegistry);
     }
 
-    public void incrementCounter() {
-        Random rand = new Random();
-        double randomNumber = rand.nextDouble();
-
-        if (randomNumber <= 0.1) {
-            exceptions.increment();
-        } else {
-            successful.increment();
-        }
+    public void incrementSuccessCounter(double amount) {
+        successful.increment(amount);
     }
 
-    public double getCounterValue() {
+    public void incrementExceptionCounter(double amount) {
+        exceptions.increment(amount);
+    }
+
+    public double getSuccessValue() {
         return successful.count();
     }
 
