@@ -45,7 +45,7 @@ Navigate to http://localhost:8081 and the application should serve a simple HTML
 
 1. Ensure that the custom java application is reachable from the prometheus container.
 
-If running a local environment using Docker compose, both containers should be on the same network and have the ability to communicate.
+    If running a local environment using Docker compose, both containers should be on the same network and have the ability to communicate.
 
 1. Interact with the exposed HTML page to generate some custom metrics.
 
